@@ -32,6 +32,59 @@ const Custproductdetails = () => {
       getName();
     },[])
   
+     ////////button change
+
+    //  cart
+  useEffect(() => {
+    if (msg) {
+      getPrdctDetails();
+     
+    }
+  }, [msg])
+    const getPrdctDetails = async () => {
+      try {
+        const res = await axios.get(`http://localhost:4007/perfume/getCartProduct/${Id}`);
+        setCartItems(res.data);
+        // console.log("All prod_id in cartItems:", cartItems.map(item => item.prod_id));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching cart items:", error);
+        setLoading(false);
+      }
+  
+    };
+  
+    useEffect(() => {
+      getPrdctDetails();
+    }, []);
+
+    // wish
+
+    useEffect(() => {
+      if (msg) {
+        getWishdetails();
+       
+      }
+    }, [msg])
+
+    const getWishdetails = async () => {
+      try {
+        const res = await axios.get(`http://localhost:4007/perfume/getWishlistProduct/${Id}`);
+        setWishItems(res.data);
+        // console.log("All prod_id in cartItems:", cartItems.map(item => item.prod_id));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching cart items:", error);
+        setLoading(false);
+      }
+  
+    };
+  
+    useEffect(() => {
+      getWishdetails();
+    }, []);
+  
+
     const getproduct=async()=>{
       const res=await axios.get(`http://localhost:4007/perfume/getcustproduct/${id}`)
       setProduct(res.data)

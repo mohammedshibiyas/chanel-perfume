@@ -55,6 +55,7 @@ const Cart = () => {
             }
             getProdctdetails();
           } catch (error) {
+            
             console.error("Error deleting product:", error);
           }
         }
