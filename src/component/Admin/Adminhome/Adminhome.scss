@@ -1,0 +1,177 @@
+@import url(https://db.onlinewebfonts.com/c/5fd740bac1abfb826fb7e35ae963efc9?family=ABChanel+Corpo+Regular);
+
+.admin-home{
+  
+.main{
+  display: flex;
+
+}
+.navbar{
+  width: 100%;
+  background-color: white;
+  height: 75px;
+  box-shadow: 0px 3px 5px 0px rgba(156,151,156,1);
+
+}
+.sidebar{
+  background-color: rgba(0, 0, 0, 0.827);
+  width: 25%;
+ min-height: 100vh;
+  box-shadow: 3px 0px 5px 0px rgba(156,151,156,1);
+}
+
+.display-side{
+  /* background-color: rgba(128, 128, 128, 0.192); */
+  width: 100%;
+}
+.sidebar-content h2{
+  font-family:"ABChanel Corpo Regular" ;
+  text-align: center  ;
+  color: white;
+  font-size: 30px;
+  margin-top: 6%;
+
+}
+.back button{
+  border: 1.2px solid ;
+  margin-left: 7%;
+  font-size: 12px;
+  color: white;
+  background-color: transparent;
+  border-radius: 5px;
+  margin-top: 5%;
+}
+.categories h6{
+  margin-top: 10%;
+  text-align: center;
+  color: white;
+  // margin-left: 3%; 
+  font-family:ABChanel Corpo Regular;
+}
+table th{
+  margin-top: 10%;
+  font-size: 12px;
+
+  font-family:ABChanel Corpo Regular;
+}
+.cat-main {
+  background-color: white;
+}
+.active_menu_link {
+  //  background: rgba(62, 161, 117, 0.3); 
+  //  gap: 20px;
+  //  display: flex;
+  color:white;
+}
+.category-table{
+  margin-top: 10%;
+  // text-align: center;
+}
+.tables{
+  // text-align: center;
+  margin-left: 15%;
+}
+.tab-btns{
+  width: 100%;
+}
+table td i{
+  margin-left: 16%;
+  border: none;
+  border: none; 
+  background-color: transparent;
+  color: rgb(204, 179, 18); 
+}
+table td button{
+  border: none;
+  background-color: transparent;
+  margin-left: 10%;
+}
+.navbar h5{
+  margin-left: 5%;
+  font-family:ABChanel Corpo Regular;
+
+}
+.nav-content{
+  margin-right: 12%;  
+  // width: 100%;
+}
+.logout{
+  // padding-right: 5%;
+}
+
+.navbar__right{
+width: 100%;
+}
+#log{
+  color: black;  
+ 
+  
+}
+.navbar__right i span{
+  font-family:poppins;
+  font-size: 14px;
+
+}
+#msg{
+  // margin-left: 1%;
+  text-decoration: none;
+  // margin-left: 2%;
+}
+#admin-name{
+  // padding-left: 2%;
+  color: red;
+  text-decoration: none;
+
+}
+.navbar__right i{
+    
+}
+#cat-btn{
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0px 0px 20px;
+  background-color: #1e3d59;
+  padding: 10px 40px;
+
+}
+#pro-btn{
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0px 0px 20px;
+  background-color: #a38e4d;
+  padding: 10px 40px;
+}
+#sale-btn{
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0px 0px 20px;
+  background-color:  #ff6e40;
+  padding: 10px 40px;
+}
+#cust-btn{
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0px 0px 20px;
+  background-color:  #ffc13b;
+  padding: 10px 40px;
+}
+#add-cat button i{
+  font-size: small;
+  margin-left: 5px;
+  
+}
+.cat-link{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+
+
+}

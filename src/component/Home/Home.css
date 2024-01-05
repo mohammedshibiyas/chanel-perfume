@@ -1,0 +1,323 @@
+@import url(https://db.onlinewebfonts.com/c/5fd740bac1abfb826fb7e35ae963efc9?family=ABChanel+Corpo+Regular);
+.all{
+    body{
+        /* font-family: abchanel-corpo,Arial,Helvetica,sans-serif; */
+    
+    }
+    .navbar{
+        height: 150px;
+        box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    }
+    
+    .upper{
+        width: 100%;
+        
+    }
+    .left-nav h3{
+        font-weight: 800;
+        font-family:"ABChanel Corpo Regular" ;
+        letter-spacing: 2px;
+        padding-left: 19%;
+        
+    }
+    .right-nav{
+    }
+    .left-nav{
+        display: flex;
+       
+        justify-content: space-between;
+    }
+    .icons{
+        margin-right: 8%;
+        padding-top: 4%;
+    }
+    .icons svg{
+        margin-right: 18px;
+        
+    
+       
+    }
+    .main-image{
+        position: relative;
+    }
+    .main-image img{
+        height: 100vh;
+    }
+    .image-details{
+        position: absolute;
+    
+        text-align: center;
+        top: 30%;
+        left: 15%;
+    }
+    .image-details h6{
+        font-weight: 600;
+        font-family:"ABChanel Corpo Regular" ;
+    
+    }
+    .image-details h4{
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-family:"ABChanel Corpo Regular" ;
+    }
+    .image-details p{
+        font-size: 14px;
+    }
+    .image-details button{
+        margin-top: 2%;
+        padding: 8px 20px;
+        font-size: 12px;
+        border :1.2px solid black;
+        background: transparent;
+        font-family:"ABChanel Corpo Regular" ;
+    }
+    
+    .image-details button:hover{
+        border: none;
+        background-color: rgba(128, 128, 128, 0.499);
+        transition: .2s;
+    }
+    .lower{
+        width: 100%;
+        text-align: center;
+    }
+    .lower a{
+        color: rgba(0, 0, 0, 0.848);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 12px;
+        font-family:"ABChanel Corpo Regular";
+        margin-left: 30px;
+    }
+    .lower a:hover{
+        border-bottom: 3px solid black;  
+    }
+    .recomend{
+        margin-top: 5%;
+        text-align: center;
+    }
+    .recomend h4{
+        font-weight: 600;
+        font-family: abchanel-corpo,arial,helvetica,sans-serif;
+        font-family: "ABChanel Corpo Regular";
+    
+        letter-spacing: 2px;
+    
+    }
+    .products{
+        display: flex;
+        padding-bottom: 20px;
+    }
+    .prod-1 {
+        width: 100%;
+        padding-top: 4%;
+    }
+    .prod-1 img{
+        width: 45%;
+    }
+    .details h5{
+        font-size: 14px;
+        font-weight: 600;
+        font-family:  abchanel-corpo,arial,helvetica,sans-serif;
+        font-family: "ABChanel Corpo Regular";
+    }
+    .details a{
+        padding-top: 5%;
+        text-decoration: none;
+        color: red;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: "ABChanel Corpo Regular";
+    }
+    .details p{
+        font-size: 14px;
+    }
+    .Antaues{
+        margin-top: 5%;
+    }
+    .details a:hover{
+         border-bottom:  2px solid black;
+    }
+    .anta-image img{
+        width: 70%;
+    }
+    .Antaues{
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .anta-detail{
+        margin: auto;
+        font-family:"ABChanel Corpo Regular" ;
+    }
+    .anta-detail h4{
+        font-weight: 600;
+    }
+    .anta-detail p{
+        font-family: arial,helvetica,sans-serif;
+        font-size: 13px;
+    }
+    .anta-detail h6{
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+    .anta-detail a{
+        color: black;
+        font-weight: 600;
+        padding-top: 2%;
+        border-bottom: 2px solid black;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    .shop-category{
+        text-align: center;
+        margin-top: 10%;
+    }
+    .shop-category h4{
+        font-family:"ABChanel Corpo Regular" ;
+        font-weight: 600;
+        letter-spacing: 2px;
+    
+    }
+    .category{
+        display: flex;
+        margin-top: 3%;
+        justify-content: center;
+        width: 100%;
+    }
+    .category-detail{
+        width: 50%;
+    }
+    .category-detail img{
+        width: 60%;
+        
+    
+    }
+    .category-detail h6{
+        font-family:"ABChanel Corpo Regular" ;
+        font-size: 15px;
+        margin-top: 5%;
+        font-weight: 600;
+    
+    }
+    .dark-banner{
+        margin-top: 5%;
+        position:relative; 
+    }
+    .dark-detail{
+        color: rgba(255, 255, 255, 0.84);
+        position: absolute;
+        bottom: 40%;
+        left: 20%;
+    }
+    .dark-detail a{
+        text-decoration: none;
+        color: white;
+        font-size: 12px;
+        border-bottom: 2px solid white;
+        font-family:"ABChanel Corpo Regular" ;
+    
+    }
+    .dark-banner img{
+        /* height: 450px; */
+        width: 100%;
+    }
+    .multi{
+        display: flex;
+        width: 95%;
+        margin-left: 3%;
+        margin-top: 5%;
+        padding-bottom: 30px;
+    }
+    .multi1{
+        width: 100%;
+    
+    }
+    .multi1 img{
+        width: 80%;
+    }
+    .multi1 h5{
+        font-family:"ABChanel Corpo Regular"  ;
+        font-weight: 600;
+        padding-top: 3%;
+        letter-spacing: 2px;
+    }
+    .multi p{
+        font-size: 14px;
+    }
+    .multi1 a{
+        font-family:"ABChanel Corpo Regular"  ;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 13px;
+        border-bottom: 2px solid black;
+        
+    }
+    .multi a:hover{
+        border-bottom: none;
+    }
+    .footer{
+        margin-top: 5%;
+        background-color: black;
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .footer h2{
+        color: white;
+        font-family:"ABChanel Corpo Regular";
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 3px;
+        padding-top: 5%;
+    }
+    .roo{
+        width: 100%;
+    }
+    
+    .col-1{
+        margin-top: 5%;
+     text-align:initial;
+     /* margin-left: 2%; */
+     
+     padding-left: 5%;
+    }
+    .col-1 h5{
+        font-size: 12px;
+        color: white;
+        font-family:"ABChanel Corpo Regular";
+        
+    }
+    .col-1 a{
+        text-decoration: none;
+        font-size: 12px;
+        color: grey;
+        margin-top: 3%;
+        text-align: start;
+    }
+    .col-1 div{
+        margin-top: 3%;
+    }
+    .links{
+        padding-top: 30px;
+    
+    }
+    .footer-border{
+        border-bottom: 1px solid rgba(128, 128, 128, 0.647);
+        width: 80%;
+        margin: auto;
+        padding-bottom: 5%;
+    }
+    .bottom-footer i{
+        color: rgba(255, 255, 255, 0.801);
+        margin-top: 3%;
+        margin-left: 2%;
+        font-size: 18px;
+    }
+
+
+    @media(min-width:300px) and (max-width:575.98px){
+        
+    }
+}
