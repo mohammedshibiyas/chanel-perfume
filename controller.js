@@ -299,6 +299,16 @@ export function delCartProduct(req,res)
     })
 }
 
+export function deleteAllProducts(req,res)
+{
+    const{id}=req.params;
+    const data=cart_schema.deleteMany({cust_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)          
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
+}
 // wishlist
 
 

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const wishlist_schema=new mongoose.Schema({
     cust_id:{type:String},
+    prod_id:{type:String},
     name:{type:String},
     category:{type:String},
     description:{type:String},

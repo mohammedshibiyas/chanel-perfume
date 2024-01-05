@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Wishlist.scss'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 
 const Wishlist = () => {
@@ -18,6 +18,25 @@ const Wishlist = () => {
     getwishlistprdct();
   },[])
 
+  const delwishlistPrdct = async (id) => {
+    const userConfirmed = window.confirm("Are you sure you want to delete this product from the cart?");
+    if (userConfirmed) {
+      try {
+        const res = await axios.delete(`http://localhost:4007/perfume/delWishListProduct/${id}`);
+        // console.log(res.data);
+        if (res) {
+          alert("Product deleted");
+        } else {
+          alert("Product not deleted");
+        }
+        getProdctdetails();
+      } catch (error) {
+        console.error("Error deleting product:", error);
+      }
+    }
+  };
+
+
   return (
     <div>
        <div className="category-all">
@@ -25,12 +44,12 @@ const Wishlist = () => {
     <Link to='/'><button><i class="fa fa-arrow-left" aria-hidden="true"></i> back</button></Link>
   </div>
   <div className="recomend">
-    <h4>Collections</h4>
+    <h4>wishlist</h4>
     <div className="products">
       {
         getPrdct.map((data, index) => (
           <div key={index}>
-            <Link className="prod-detail" >
+            <Link className="prod-detail" to={`/custproductdetails/${data._id}`} >
               <div className="col-lg-3 prod-1">
                 <img src={data.banner} alt="" />
                 <div className="details">

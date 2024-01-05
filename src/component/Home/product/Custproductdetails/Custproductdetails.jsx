@@ -35,7 +35,7 @@ const Custproductdetails = () => {
     const getproduct=async()=>{
       const res=await axios.get(`http://localhost:4007/perfume/getcustproduct/${id}`)
       setProduct(res.data)
-      
+      product_id = res.data._id
       // console.log(res.data);
       // console.log(getProduct.images[0]);
     
@@ -49,7 +49,7 @@ const Custproductdetails = () => {
   const addToCart = async () => {
     try {
        
-      const res = await axios.post("http://localhost:4007/perfume/addtocart", {...getProduct, cust_id:msg.id,quantity:1,});
+      const res = await axios.post("http://localhost:4007/perfume/addtocart", {...getProduct, cust_id:msg.id,quantity:1, prod_id: getProduct._id});
       console.log(res.data);
       if(res){
         alert("Added To Cart")
@@ -64,7 +64,7 @@ const Custproductdetails = () => {
 
   const addtowishlist=async()=>{
     try {
-      const res=await axios.post("http://localhost:4007/perfume/addToWhishList",{...getProduct, cust_id:msg.id});
+      const res=await axios.post("http://localhost:4007/perfume/addToWhishList",{...getProduct, cust_id:msg.id, prod_id: getProduct._id});
       console.log(res.data);
       if(res){
         alert("Added To wishlist")
