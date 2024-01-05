@@ -19,8 +19,14 @@
         justify-content: space-evenly;
         margin-top: 4%;
     }
+   .bottom{
+    border-bottom: 1px solid black;
+   }
     .product-container{
         display: flex;
+        width: 100%;
+       
+
     }
     .left-side{
         display: flex;

@@ -57,6 +57,7 @@ const Wishlist = () => {
                   <p>{data.title}</p>
                   {/* <p>{data.description}</p> */}
                   <h5 id='prod-price'>{data.price}₹</h5>
+                  
                   {/* <Link className='delete-btn' onClick={addToCart}>Add To Bag</Link> */}
                 </div>
               </div>

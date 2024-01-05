@@ -55,7 +55,7 @@ const Cart = () => {
             }
             getProdctdetails();
           } catch (error) {
-            
+
             console.error("Error deleting product:", error);
           }
         }
@@ -93,7 +93,9 @@ const Cart = () => {
           <h5>{data.price} ₹</h5>
         </div>
       </div>
+     
     </div>
+    
   ))}
 </div>
 {/* 
