@@ -18,6 +18,10 @@ import Allproducts from './component/Home/product/allproducts/Allproducts'
 import Custproductdetails from './component/Home/product/Custproductdetails/Custproductdetails'
 import Cart from './component/Home/cart/Cart'
 import Wishlist from './component/Home/wishlist/Wishlist'
+import Mencategory from './component/Home/category-wise/mencategory/Mencategory'
+import Women from './component/Home/category-wise/women/Women'
+import Lesexclusifes from './component/Home/category-wise/les exclusifes/Lesexclisifes'
+import Leseaux from './component/Home/category-wise/les eaux/Leseaux'
 
 function App() {
 
@@ -42,6 +46,10 @@ function App() {
             <Route path='/custproductdetails/:id' Component={Custproductdetails}/>
             <Route path='/addtocart/:id' Component={Cart}/>
             <Route path='/addtowishlist/:id' Component={Wishlist}/>
+            <Route path='/men' Component={Mencategory}/>
+            <Route path='/women' Component={Women}/>
+            <Route path='/lesexclusifes' Component={Lesexclusifes}/>
+            <Route path='/leseaux' Component={Leseaux}/>
 
           </Routes>
       </BrowserRouter>

@@ -243,23 +243,22 @@ const Home = () => {
    <div className=" category" >
    <div className="category-detail">
       <img src="/women.webp" alt="" />
-      <h6>women</h6>
+      <Link className='cato' to={`/women`}><h6>womEN</h6></Link>
     </div>
 
     <div className="category-detail">
       <img src="/men.webp" alt="" />
-      <h6>MEN</h6>
+      <Link className='cato' to={`/men`}><h6>MEN</h6></Link>
     </div>
 
     <div className="category-detail">
       <img src="/les ex.webp" alt="" />
-      <h6>LES EXCLUSIFES</h6>
+      <Link className='cato' to={`/lesexclusifes`} ><h6>LES EXCLUSIFES</h6></Link>
     </div>
 
     <div className="category-detail">
       <img src="/les eaux.webp" alt="" />
-      <h6>LES EAUX</h6>
-    </div>
+      <Link className='cato' to={`/leseaux`}><h6>LES Eaux</h6></Link>    </div>
    </div>
    </div>
 
