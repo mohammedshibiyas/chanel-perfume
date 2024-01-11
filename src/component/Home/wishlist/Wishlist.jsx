@@ -29,7 +29,7 @@ const Wishlist = () => {
         } else {
           alert("Product not deleted");
         }
-        getProdctdetails();
+        getwishlistprdct();
       } catch (error) {
         console.error("Error deleting product:", error);
       }
@@ -58,7 +58,7 @@ const Wishlist = () => {
                   {/* <p>{data.description}</p> */}
                   <h5 id='prod-price'>{data.price}₹</h5>
                   
-                  {/* <Link className='delete-btn' onClick={addToCart}>Add To Bag</Link> */}
+                  <Link className='delete-btn' onClick={()=>delwishlistPrdct(data._id)} >Delete</Link>
                 </div>
               </div>
             </Link>

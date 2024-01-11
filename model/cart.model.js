@@ -6,8 +6,8 @@ const cart_schema=new mongoose.Schema({
     category:{type:String},
     description:{type:String},
     quantity:{type:Number},
-    price:{type:String},
-    banner:{type:String}
+    price:{type:Number},
+    banner:{type:String}    
 })
 
 export default mongoose.model.cart||mongoose.model("cart",cart_schema)

@@ -10,37 +10,49 @@ const Cart = () => {
     const [totalPrice,setTotalPrice]=useState(0)
     const [getPrdct,setProdct]=useState([])
 
+    const updateQuantity=async(id,e)=>{
+      try {
+        const newQuantity = parseInt(e);
+        console.log(newQuantity);
+        const res=await axios.patch(`http://localhost:4007/perfum/updateCartItem/${id}`,{quantity:newQuantity})
+        console.log(res.data);
+        getPrdctDetails();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     const getProdctdetails=async(e)=>{
       // e.preventDefault();
         const res=await axios.get(`http://localhost:4007/perfume/getCartProduct/${id}`)
         setProdct(res.data)
-        // console.log(res.data);
+        
     }
     useEffect(()=>{
         getProdctdetails();
     },[])
 
     useEffect(() => {
-        const totalPriceSum = getPrdct.reduce((sum, product) => sum + Number(product.price), 0);
-        setTotalPrice(totalPriceSum);
+      const totalPriceSum = getPrdct.reduce((sum, product) => sum + Number(product.price *product.quantity ), 0);
+      console.log(totalPriceSum);
+      setTotalPrice(totalPriceSum);
       }, [getPrdct]);
 
-      const qty = (e, index) => {
-        const selectedQuantity = parseInt(e.target.value, 10);
-        const productPrice = getPrdct[index].price;
-       
-        if (!isNaN(productPrice)) {
-          console.log(getPrdct[index].price);
-          const updatedPrice = selectedQuantity * productPrice
-          console.log(updatedPrice);
-          const updatedGetPrdct = [...getPrdct];
-          updatedGetPrdct[index].price = updatedPrice;
-          setProdct(updatedGetPrdct);
-        } else {
-          console.error('Invalid product price:', productPrice);
+      const BuyNow = async (e) => {
+        e.preventDefault();
+        const userConfirmed = window.confirm("Are you sure you want to proceed to checkout?");
+        if (userConfirmed) {
+          try {
+    
+            // console.log(res.data);
+            await axios.delete(`http://localhost:4007/perfume/delAlltProduct/${id}`);
+            alert("Order Placed");
+            navigate("/")
+          } catch (error) {
+            console.error("Error deleting products:", error);
+          }
         }
       };
-
 
       const delCartPrdct = async (id) => {
         const userConfirmed = window.confirm("Are you sure you want to delete this product from the cart?");
@@ -83,14 +95,14 @@ const Cart = () => {
       </div>
       <div className="right-side">
         <div className="qty">
-          <select name="" id="" onChange={(e) => qty(e, index)}>
+          <select name="" id="" onChange={(e)=>{updateQuantity(data.prod_id,e.target.value)}}>
             <option value="1">Qty : 1</option>
             <option value="2">Qty : 2</option>
             <option value="3">Qty : 3</option>
           </select>
         </div>
         <div className="price">
-          <h5>{data.price} ₹</h5>
+          <h5>₹ {data.price}</h5>
         </div>
       </div>
      
@@ -131,6 +143,10 @@ const Cart = () => {
                 <p>Subtotal</p>
                 <h6>₹  {totalPrice ? totalPrice : 0}</h6>
             </div>
+            <div className="delivery">
+            <p>Delivery Fee</p>
+                <h6>₹ 99</h6>
+            </div>
             <div className="total-price">
                 <h5>Total</h5>
                 <h6>₹ {totalPrice ? totalPrice + 99 : 99}</h6>
@@ -138,7 +154,7 @@ const Cart = () => {
         </div>
 
         <div className="check-out">
-          <Link className='checkout-btn'>Continue to checkout</Link>
+          <Link className='checkout-btn' onClick={BuyNow}>Continue to checkout</Link>
         </div>
 
       </div>

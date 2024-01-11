@@ -22,7 +22,7 @@ const Categoryproduct = () => {
    }
    catch (error) {
       console.log("not fetch");
-   }
+   }h
   
   }
    useEffect(()=>{

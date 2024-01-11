@@ -43,6 +43,8 @@ router.route("/addtocart").post(controller.Addtocart)
 router.route("/getCartProduct/:id").get(controller.getCartProduct);
 router.route("/delCartProduct/:id").delete(controller.delCartProduct);
 router.route("/delAlltProduct/:id").delete(controller.deleteAllProducts);
+router.route("/updateCartItem/:prodId").patch(controller.editQuantity);
+
 
 
 // customer
