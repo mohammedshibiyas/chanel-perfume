@@ -468,10 +468,26 @@ padding-left: 10%;
 @media(min-width:300px) and (max-width:575.95px){
     .navbar{
         height: 100px;
+        padding-bottom: 30px;
     }
-  .left-nav{
+  .left-nav h3{
     display: none;
   }
+  .icons{
+    // margin: auto;
+    margin-left: 70px;
+    width: 100%;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: end;
+    
+  }
+  #can-cat{
+    text-decoration: none;
+    color: black
+    ;
+  }
+
   .lower{
     display: none;
   }

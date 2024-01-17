@@ -49,9 +49,12 @@ const Home = () => {
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Chanel</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+
+  {/* canvas */}
+
   <div class="offcanvas-body">
    <Link className='canvas-title' to={'/allproducts'}> <h6>product</h6></Link>
-   <Link className='canvas-title'> <h6>category</h6></Link>
+    <a href="#main-categories" id='can-cat'><h6>category</h6></a>
    <Link className='canvas-title'><h6>About</h6></Link>
    <Link className='canvas-title'><h6>Contact</h6></Link>
    

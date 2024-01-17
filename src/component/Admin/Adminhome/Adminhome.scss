@@ -172,6 +172,62 @@ width: 100%;
 
 
 
+@media(min-width:300px) and (max-width:575.98px){
+  .sidebar{
+    background-color: rgba(0, 0, 0, 0.827);
+    width: 100%;
+   min-height: 100vh;
+    box-shadow: 3px 0px 5px 0px rgba(156,151,156,1);
+  }
 
+  .sidebar-content h2{
+    font-family:"ABChanel Corpo Regular" ;
+    text-align: center  ;
+    color:red;
+    font-size: 10px;
+    margin-top: 6%;
+    display: none;
+  
+  }
+  .categories h2{
+    display: none;
+
+    font-size: 10px;
+  }
+
+  #cat-btn{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0px 0px 10px;
+    background-color: #1e3d59;
+    padding: 10px 10px;
+  
+  }
+  #pro-btn{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+    background-color: #a38e4d;
+    padding: 10px 10px;
+  }
+  #sale-btn{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+    background-color:  #ff6e40;
+    padding: 10px 10px;
+  }
+  #cust-btn{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+    background-color:  #ffc13b;
+    padding: 10px 10px;
+  }
+}
 
 }

@@ -5,74 +5,78 @@ import axios from 'axios'
 
 const Cart = () => {
 
-    const navigate=useNavigate()
-    const {id}=useParams()
-    const [totalPrice,setTotalPrice]=useState(0)
-    const [getPrdct,setProdct]=useState([])
+  const navigate = useNavigate()
+  const { id } = useParams()
+  // const [price,setPrice]=useState({})
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [getPrdct, setProdct] = useState([])
 
-    const updateQuantity=async(id,e)=>{
+  const updateQuantity=async(id,e)=>{
+    try {
+      const newQuantity = parseInt(e);
+      console.log(newQuantity);
+      const res=await axios.patch(`http://localhost:4007/perfume/updateCartItem/${id}`,{quantity:newQuantity})
+      console.log(res.data);
+      getPrdctDetails();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // const [count,setCount]=useState(0)
+  const getPrdctDetails = async () => {
+    const res = await axios.get(` http://localhost:4007/perfume/getCartProduct/${id}`)
+    setProdct(res.data)
+
+  }
+  useEffect(() => {
+    getPrdctDetails()
+  }, [])
+
+
+
+  useEffect(() => {
+    const totalPriceSum = getPrdct.reduce((sum, product) => sum + Number(product.price * product.quantity), 0);
+    setTotalPrice(totalPriceSum);
+  }, [getPrdct]);
+
+
+  const BuyNow = async (e) => {
+    e.preventDefault();
+    const userConfirmed = window.confirm("Are you sure you want to proceed to checkout?");
+    if (userConfirmed) {
       try {
-        const newQuantity = parseInt(e);
-        console.log(newQuantity);
-        const res=await axios.patch(`http://localhost:4007/perfum/updateCartItem/${id}`,{quantity:newQuantity})
-        console.log(res.data);
-        getPrdctDetails();
+
+        // console.log(res.data);
+        await axios.post(`http://localhost:4007/perfume/placeOrder/${id}`);
+        alert("Order Placed");
+        window.location.reload()
+        navigate("/")
       } catch (error) {
-        console.log(error);
+        console.error("Error deleting products:", error);
       }
     }
+  };
 
-    const getProdctdetails=async(e)=>{
-      // e.preventDefault();
-        const res=await axios.get(`http://localhost:4007/perfume/getCartProduct/${id}`)
-        setProdct(res.data)
-        
+  const delCartPrdct = async (id) => {
+    const userConfirmed = window.confirm("Are you sure you want to delete this product from the cart?");
+    if (userConfirmed) {
+      try {
+        const res = await axios.delete(`http://localhost:4007/perfume/delCartProduct/${id}`);
+        console.log(res.data);
+        if (res) {
+          alert("Product deleted");
+        } else {
+          alert("Product not deleted");
+        }
+        getPrdctDetails();
+      } catch (error) {
+        console.error("Error deleting product:", error);
+      }
     }
-    useEffect(()=>{
-        getProdctdetails();
-    },[])
+  };
 
-    useEffect(() => {
-      const totalPriceSum = getPrdct.reduce((sum, product) => sum + Number(product.price *product.quantity ), 0);
-      console.log(totalPriceSum);
-      setTotalPrice(totalPriceSum);
-      }, [getPrdct]);
-
-      const BuyNow = async (e) => {
-        e.preventDefault();
-        const userConfirmed = window.confirm("Are you sure you want to proceed to checkout?");
-        if (userConfirmed) {
-          try {
-    
-            // console.log(res.data);
-            await axios.delete(`http://localhost:4007/perfume/delAlltProduct/${id}`);
-            alert("Order Placed");
-            navigate("/")
-          } catch (error) {
-            console.error("Error deleting products:", error);
-          }
-        }
-      };
-
-      const delCartPrdct = async (id) => {
-        const userConfirmed = window.confirm("Are you sure you want to delete this product from the cart?");
-        if (userConfirmed) {
-          try {
-            const res = await axios.delete(`http://localhost:4007/perfume/delCartProduct/${id}`);
-            // console.log(res.data);
-            if (res) {
-              alert("Product deleted");
-            } else {
-              alert("Product not deleted");
-            }
-            getProdctdetails();
-          } catch (error) {
-
-            console.error("Error deleting product:", error);
-          }
-        }
-      };
-
+  
   return (
     <div>
       <div className="all-cart">
@@ -95,14 +99,15 @@ const Cart = () => {
       </div>
       <div className="right-side">
         <div className="qty">
-          <select name="" id="" onChange={(e)=>{updateQuantity(data.prod_id,e.target.value)}}>
+        <select name="" id="" onChange={(e)=>{updateQuantity(data.prod_id,e.target.value)}}>
+        <option >  select Qty{data.quantity}</option>
             <option value="1">Qty : 1</option>
             <option value="2">Qty : 2</option>
             <option value="3">Qty : 3</option>
           </select>
         </div>
         <div className="price">
-          <h5>₹ {data.price}</h5>
+          <h5>₹ {data.price*data.quantity}</h5>
         </div>
       </div>
      
@@ -110,33 +115,8 @@ const Cart = () => {
     
   ))}
 </div>
-{/* 
-        <div className="roow">
-          
-            <div>
-            <div className="left-side">
-                <img src="/n5.jpg" alt="" />
-                <div className="content">
-                    <h5>Note 5</h5>
-                    <p>Eau de Parfum Spray</p>
-                    <Link className="delete-btn">Delete</Link>
-                </div>
-            </div>
-            <div className="right-side">
-                <div className="qty">
-                <select name="" id=""  onChange={(e) => qty(e, index)}>
-                <option value="1">Qty : 1</option>
-                <option value="2">Qty : 2</option>
-                <option value="3">Qty : 3</option>
-               
-              </select>
-                </div>
-                <div className="price">
-                    <h5>105$</h5>
-                </div>
-            </div>
-            </div>
-        </div> */}
+
+
 
         <div className="total">
             <div className="subtotal">
@@ -154,7 +134,7 @@ const Cart = () => {
         </div>
 
         <div className="check-out">
-          <Link className='checkout-btn' onClick={BuyNow}>Continue to checkout</Link>
+         {getPrdct.length===0?( <Link className='checkout-btn'>Your cart is empty</Link>):( <Link className='checkout-btn' onClick={BuyNow}>Continue to checkout</Link>)}
         </div>
 
       </div>
