@@ -134,7 +134,7 @@ const Cart = () => {
         </div>
 
         <div className="check-out">
-         {getPrdct.length===0?( <Link className='checkout-btn'>Your cart is empty</Link>):( <Link className='checkout-btn' onClick={BuyNow}>Continue to checkout</Link>)}
+         {getPrdct.length===0?( <Link className='checkout-btn'>Your cart is empty </Link>):( <Link className='checkout-btn' onClick={BuyNow}>Continue to checkout</Link>)}
         </div>
 
       </div>
